@@ -10,7 +10,7 @@ export default async function CommonPage(props: PageProps<"/[slug]">) {
 
   return (
     <section className="bg-bg flex min-h-screen items-center justify-center">
-      <h2 className="font-semi-bold text-3xl">{formatTitle(slug)}</h2>
+      <h2 className="font-abhaya text-5xl font-bold">{formatTitle(slug)}</h2>
     </section>
   );
 }

@@ -1,7 +1,7 @@
 import Footer from "@/components/layout/Footer";
 import Navbar from "@/components/layout/Navbar";
 import type { Metadata } from "next";
-import { Playfair_Display, Work_Sans } from "next/font/google";
+import { Abhaya_Libre, Playfair_Display, Work_Sans } from "next/font/google";
 import "./globals.css";
 
 const workSans = Work_Sans({
@@ -15,6 +15,12 @@ const playfairDisplay = Playfair_Display({
   subsets: ["latin"],
 });
 
+const abhayaLibre = Abhaya_Libre({
+  variable: "--font-abhaya-libre",
+  subsets: ["latin"],
+  weight: ["400", "700"],
+});
+
 export const metadata: Metadata = {
   title: "Ada Psychiatry",
   description: "Developed by Hitesh Gohel",
@@ -24,7 +30,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${workSans.variable} ${playfairDisplay.variable} h-full antialiased`}
+      className={`${workSans.variable} ${playfairDisplay.variable} ${abhayaLibre.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">
         <Navbar />

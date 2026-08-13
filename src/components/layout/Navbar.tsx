@@ -14,7 +14,7 @@ const NAV_ITEMS: { label: string; href?: string; hasDropdown?: boolean }[] = [
 const Navbar = () => {
   return (
     <nav className="bg-black">
-      <div className="flex items-center justify-between gap-3 px-4 py-3 sm:px-10 sm:py-4">
+      <div className="flex items-center justify-between gap-3 px-4 py-3 sm:px-10 sm:py-4 lg:h-[83px] lg:py-0">
         <Link href="/" className="flex min-w-0 items-center gap-2 sm:gap-3">
           <Image
             src="/images/logo-icon.png"
@@ -43,7 +43,7 @@ const Navbar = () => {
 
           <Button
             href="/book-an-appointment"
-            className="shrink-0 whitespace-nowrap"
+            className="shrink-0 text-sm! leading-[18.5px]! font-medium! whitespace-nowrap lg:h-[46px]! lg:w-[209px]!"
           >
             Book an Appointment
           </Button>

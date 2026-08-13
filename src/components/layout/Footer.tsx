@@ -16,11 +16,13 @@ const QUICK_LINKS: FooterLink[] = [
   { label: "Services", href: "/services" },
   { label: "Contact Us", href: "/contact-us" },
 ];
+
 const RESOURCE_LINKS: FooterLink[] = [
   { label: "FAQs", href: "/faqs" },
   { label: "Blog", href: "/blog" },
   { label: "Fees and Insurance", href: "/fees-and-insurance" },
 ];
+
 const LEGAL_LINKS: FooterLink[] = [
   { label: "Terms", href: "/terms" },
   { label: "Privacy", href: "/privacy" },
@@ -39,8 +41,16 @@ const SOCIAL_ICONS = [
     Icon: FacebookIcon,
     href: "https://www.facebook.com/login/",
   },
-  { label: "X", Icon: XIcon, href: "https://x.com/login" },
-  { label: "TikTok", Icon: TikTokIcon, href: "https://www.tiktok.com/login" },
+  {
+    label: "X",
+    Icon: XIcon,
+    href: "https://x.com/login",
+  },
+  {
+    label: "TikTok",
+    Icon: TikTokIcon,
+    href: "https://www.tiktok.com/login",
+  },
   {
     label: "LinkedIn",
     Icon: LinkedInIcon,
@@ -48,15 +58,22 @@ const SOCIAL_ICONS = [
   },
 ];
 
+const HEADING_SIZE_CLASSES = {
+  16: "text-[16px]",
+  18: "text-[18px]",
+} as const;
+
 const FooterHeading = ({
   children,
   className = "",
+  size = 18,
 }: {
   children: string;
   className?: string;
+  size?: 16 | 18;
 }) => (
   <p
-    className={`text-goldenrod font-serif text-[18px] tracking-wide ${className}`}
+    className={`font-abhaya text-goldenrod leading-[30px] font-bold tracking-[0.2px] ${HEADING_SIZE_CLASSES[size]} ${className}`}
   >
     {children}
   </p>
@@ -71,7 +88,8 @@ const FooterLinkGroup = ({
 }) => (
   <div>
     <FooterHeading>{heading}</FooterHeading>
-    <ul className="mt-5 space-y-4">
+
+    <ul className="mt-[20px] flex flex-col gap-[14px]">
       {links.map((link) => (
         <li key={link.label}>
           <Link
@@ -88,26 +106,159 @@ const FooterLinkGroup = ({
 
 const Footer = () => {
   return (
-    <footer className="bg-black py-6 text-white sm:px-20 sm:py-6">
-      <div className="px-10">
-        <div className="grid gap-x-6 gap-y-10 lg:grid-cols-[7fr_3fr]">
-          <div className="grid gap-x-4 gap-y-10 md:grid-cols-3 lg:grid-cols-[1fr_1fr_1fr_1.6fr]">
-            <FooterLinkGroup heading="Quick Links" links={QUICK_LINKS} />
-            <FooterLinkGroup heading="Resources" links={RESOURCE_LINKS} />
-            <FooterLinkGroup heading="Legal" links={LEGAL_LINKS} />
+    <footer className="relative w-full bg-black text-white lg:h-[421px]">
+      {/* =========================
+          DESKTOP
+      ========================== */}
+      <div className="hidden lg:block">
+        {/* Quick Links */}
+        <div className="absolute top-[52px] left-[100px]">
+          <FooterLinkGroup heading="Quick Links" links={QUICK_LINKS} />
+        </div>
 
-            <div>
-              <FooterHeading>Business Hours</FooterHeading>
-              <p className="mt-5 font-sans text-sm text-white/90">
+        {/* Resources */}
+        <div className="absolute top-[52px] left-[310px]">
+          <FooterLinkGroup heading="Resources" links={RESOURCE_LINKS} />
+        </div>
+
+        {/* Legal */}
+        <div className="absolute top-[52px] left-[510px]">
+          <FooterLinkGroup heading="Legal" links={LEGAL_LINKS} />
+        </div>
+
+        {/* Business Hours */}
+        <div className="absolute top-[52px] left-[710px]">
+          <FooterHeading>Business Hours</FooterHeading>
+
+          <div className="mt-[20px] flex flex-col gap-[14px]">
+            <p className="font-sans text-sm text-white/90">Monday - Thursday</p>
+
+            <p className="font-sans text-sm text-white/90">
+              09:00 am - 4:00 pm
+            </p>
+          </div>
+
+          <FooterHeading className="mt-[30px]">For Careers</FooterHeading>
+
+          <div className="mt-[10px] flex flex-col gap-0">
+            <p className="font-sans text-sm whitespace-nowrap text-white/90">
+              Interested in joining the ADA Team?
+            </p>
+
+            <a
+              href="mailto:Career@adapsychiatry.com"
+              className="font-sans text-sm text-white/90 hover:text-white"
+            >
+              Career@adapsychiatry.com
+            </a>
+          </div>
+        </div>
+
+        {/* =========================
+            LOGO / RIGHT CONTENT
+        ========================== */}
+
+        <div className="absolute top-[45px] left-[1043px]">
+          <Link href="/" className="flex items-center gap-[14px]">
+            <Image
+              src="/images/logo-icon.png"
+              alt="Ada Psychiatry logo"
+              width={46}
+              height={46}
+              className="h-[46px] w-[46px]"
+            />
+
+            <span className="font-sans text-base font-bold tracking-[3px]">
+              ADA PSYCHIATRY
+            </span>
+          </Link>
+        </div>
+
+        {/* Locate Us */}
+        <div className="absolute top-[114px] left-[1043px] w-[357px]">
+          <FooterHeading size={16}>Locate us</FooterHeading>
+
+          <p className="mt-[6px] font-sans text-sm leading-[20px] text-white/90">
+            1820 E Ray Road, STE A107, Chandler, Arizona 85225
+          </p>
+
+          <p className="mt-[4px] font-sans text-sm text-white/90">
+            Phone:{" "}
+            <a href="tel:480-526-9292" className="hover:text-white">
+              480-526-9292
+            </a>
+          </p>
+        </div>
+
+        {/* Follow Us */}
+        <div className="absolute top-[210px] left-[1043px]">
+          <FooterHeading size={16}>Follow us</FooterHeading>
+
+          <div className="mt-[10px] flex items-center gap-[16px]">
+            {SOCIAL_ICONS.map(({ label, Icon, href }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={label}
+                className="flex h-[24px] w-[24px] items-center justify-center text-white/90 hover:text-white"
+              >
+                <Icon className="h-[24px] w-[24px]" />
+              </a>
+            ))}
+          </div>
+        </div>
+
+        {/* =========================
+            DIVIDER
+        ========================== */}
+
+        <div className="absolute top-[363px] left-0 h-px w-full bg-white/20" />
+
+        {/* =========================
+            COPYRIGHT
+        ========================== */}
+
+        <div className="absolute top-[377px] left-1/2 -translate-x-1/2">
+          <p className="font-sans text-xs leading-[30px] whitespace-nowrap text-white/70">
+            &copy; Ada Psychiatry. All rights reserved.
+          </p>
+        </div>
+      </div>
+
+      {/* =========================
+          MOBILE / TABLET
+      ========================== */}
+
+      <div className="px-6 py-10 lg:hidden">
+        <div className="grid gap-10 sm:grid-cols-2">
+          <FooterLinkGroup heading="Quick Links" links={QUICK_LINKS} />
+
+          <FooterLinkGroup heading="Resources" links={RESOURCE_LINKS} />
+
+          <FooterLinkGroup heading="Legal" links={LEGAL_LINKS} />
+
+          <div>
+            <FooterHeading>Business Hours</FooterHeading>
+
+            <div className="mt-5 flex flex-col gap-[14px]">
+              <p className="font-sans text-sm text-white/90">
                 Monday - Thursday
               </p>
-              <p className="mt-1 font-sans text-sm text-white/90">
+
+              <p className="font-sans text-sm text-white/90">
                 09:00 am - 4:00 pm
               </p>
-              <FooterHeading className="mt-8">For Careers</FooterHeading>
-              <p className="mt-5 font-sans text-sm whitespace-nowrap text-white/90">
+            </div>
+
+            <FooterHeading className="mt-8">For Careers</FooterHeading>
+
+            <div className="mt-5 flex flex-col gap-[14px]">
+              <p className="font-sans text-sm text-white/90">
                 Interested in joining the ADA Team?
               </p>
+
               <a
                 href="mailto:Career@adapsychiatry.com"
                 className="font-sans text-sm text-white/90 hover:text-white"
@@ -116,55 +267,65 @@ const Footer = () => {
               </a>
             </div>
           </div>
+        </div>
 
-          <div>
-            <Link href="/" className="flex items-center gap-3">
-              <Image
-                src="/images/logo-icon.png"
-                alt="Ada Psychiatry logo"
-                width={40}
-                height={40}
-                className="h-9 w-9"
-              />
-              <span className="font-sans text-base font-bold tracking-[3px]">
-                ADA PSYCHIATRY
-              </span>
-            </Link>
+        {/* Mobile Logo */}
+        <div className="mt-10">
+          <Link href="/" className="flex items-center gap-3">
+            <Image
+              src="/images/logo-icon.png"
+              alt="Ada Psychiatry logo"
+              width={46}
+              height={46}
+              className="h-[46px] w-[46px]"
+            />
 
-            <FooterHeading className="mt-8">Locate us</FooterHeading>
-            <p className="mt-5 font-sans text-sm text-white/90">
-              1820 E Ray Road, STE A107, Chandler, Arizona 85225
-            </p>
-            <p className="mt-1 font-sans text-sm text-white/90">
-              Phone:{" "}
-              <a href="tel:480-526-9292" className="hover:text-white">
-                480-526-9292
+            <span className="font-sans text-base font-bold tracking-[3px]">
+              ADA PSYCHIATRY
+            </span>
+          </Link>
+
+          <FooterHeading size={16} className="mt-8">
+            Locate us
+          </FooterHeading>
+
+          <p className="mt-5 font-sans text-sm text-white/90">
+            1820 E Ray Road, STE A107, Chandler, Arizona 85225
+          </p>
+
+          <p className="mt-1 font-sans text-sm text-white/90">
+            Phone:{" "}
+            <a href="tel:480-526-9292" className="hover:text-white">
+              480-526-9292
+            </a>
+          </p>
+
+          <FooterHeading size={16} className="mt-8">
+            Follow us
+          </FooterHeading>
+
+          <div className="mt-4 flex items-center gap-4">
+            {SOCIAL_ICONS.map(({ label, Icon, href }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={label}
+                className="flex h-6 w-6 items-center justify-center text-white/90 hover:text-white"
+              >
+                <Icon className="h-6 w-6" />
               </a>
-            </p>
-
-            <FooterHeading className="mt-8">Follow us</FooterHeading>
-            <div className="mt-4 flex items-center gap-4">
-              {SOCIAL_ICONS.map(({ label, Icon, href }) => (
-                <a
-                  key={label}
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={label}
-                  className="text-white/90 hover:text-white"
-                >
-                  <Icon className="h-5 w-5" />
-                </a>
-              ))}
-            </div>
+            ))}
           </div>
         </div>
-      </div>
 
-      <div className="mt-20 w-full border-t border-white/20 pt-6 text-center">
-        <p className="font-sans text-xs text-white/70">
-          &copy; Ada Psychiatry. All rights reserved.
-        </p>
+        {/* Mobile Divider + Copyright */}
+        <div className="mt-10 border-t border-white/20 pt-6 text-center">
+          <p className="font-sans text-xs text-white/70">
+            &copy; Ada Psychiatry. All rights reserved.
+          </p>
+        </div>
       </div>
     </footer>
   );

@@ -13,6 +13,7 @@
 @theme inline {
   --font-sans: var(--font-work-sans);
   --font-serif: var(--font-playfair-display);
+  --font-abhaya: var(--font-abhaya-libre);
 }
 
 :root {
