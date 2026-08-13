@@ -4,6 +4,7 @@
   --color-bg: #faf4e6;
   --color-cream: #f7eed9;
   --color-gold: #c18c2c;
+  --color-gold-light: #fcf38a;
   --color-goldenrod: #daa520;
   --color-ink: #1b1b1b;
   --color-ink-alt: #232020;
@@ -14,8 +15,38 @@
   --font-serif: var(--font-playfair-display);
 }
 
+:root {
+  --gradient-gold: linear-gradient(
+    90deg,
+    #c18c2c 0%,
+    #fcf38a 50.52%,
+    #c18c2c 100%
+  );
+  --gradient-gold-soft: linear-gradient(
+    90deg,
+    #cea341 0%,
+    #e8d16b 49.79%,
+    #f0df78 100%
+  );
+}
+
 body {
   background: var(--color-bg);
   color: var(--color-ink);
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+.bg-gradient-gold {
+  background-image: var(--gradient-gold);
+}
+
+.bg-gradient-gold-soft {
+  background-image: var(--gradient-gold-soft);
+}
+
+.text-gradient-gold {
+  background-image: var(--gradient-gold);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
 }
