@@ -67,16 +67,18 @@ const Hero = () => {
 
       <div className="relative px-6 py-14 sm:px-12 sm:py-16 lg:px-20 lg:py-20">
         <div className="max-w-xl">
-          <h1 className="font-serif text-3xl leading-[1.15] font-normal tracking-wide text-white uppercase sm:text-4xl sm:leading-tight lg:text-5xl">
-            {/* <h1 className="font-serif text-[48px] leading-[56.5px] font-normal tracking-normal text-white uppercase"> */}
-            Need A Mental Health Provider?
+          <h1 className="font-abhaya text-3xl leading-[1.15] font-normal tracking-normal text-white uppercase sm:text-4xl sm:leading-tight lg:text-[48px] lg:leading-[56.5px]">
+            Need A Mental
+            <span className="block">Health Provider?</span>
           </h1>
-          <p className="mt-3 font-serif text-xl text-white">No Look Further</p>
-          <p className="mt-3 max-w-md font-sans text-lg text-white/90">
+          <p className="font-abhaya mt-[6px] text-xl leading-[28px] font-normal text-white">
+            No Look Further
+          </p>
+          <p className="font-abhaya mt-[6px] max-w-[425px] text-[20px] leading-[28px] font-normal text-white">
             Our goal is to provide a safe, comfortable, and warm environment so
             that you can openly discuss your mental health needs.
           </p>
-          <Button href="/learn-more" className="mt-10">
+          <Button href="/learn-more" className="mt-10 font-medium!">
             Learn More
             <ArrowRightIcon className="h-4 w-4" />
           </Button>
@@ -84,7 +86,7 @@ const Hero = () => {
           <div
             role="tablist"
             aria-label="Hero slides"
-            className="mt-10 flex items-center gap-2"
+            className="mt-[86px] flex items-center gap-2"
           >
             {Array.from({ length: SLIDE_COUNT }).map((_, index) => {
               const HexagonIcon =

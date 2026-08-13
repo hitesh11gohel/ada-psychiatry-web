@@ -23,21 +23,25 @@ const FounderPhoto = ({ className = "" }: { className?: string }) => (
 
 const FounderContent = () => (
   <>
-    <SectionHeading as="h2" align="left">
+    <SectionHeading
+      as="h2"
+      align="left"
+      className="font-abhaya! flex! h-[54px]! items-center! [font-feature-settings:'liga'_off,'clig'_off] text-[36px]! leading-[32px]! font-bold! text-black!"
+    >
       Meet The Founder
     </SectionHeading>
-    <p className="text-ink mt-6 font-serif text-2xl font-semibold">
+    <p className="text-ink font-abhaya mt-[10px] flex h-[31px] items-center text-2xl leading-[18.5px] font-bold">
       Lakeisha Appleton
     </p>
-    <p className="text-ink mt-1 font-sans text-base font-semibold">
+    <p className="text-ink mt-1 flex h-[25px] items-center font-sans text-xl leading-[18.5px] font-medium">
       FNP-C, PMHNP-BC
     </p>
-    <p className="text-ink mt-4 font-sans text-lg leading-relaxed">
+    <p className="text-ink mt-[20px] font-sans text-xl leading-[26px] font-normal">
       &ldquo;Mental health problems don&rsquo;t define who you are. They are
       something you experience. You walk in the rain and you feel the rain, but,
       importantly, YOU ARE NOT THE RAIN.&rdquo; &mdash; Matt Haig
     </p>
-    <Button href="/learn-more" className="mt-8">
+    <Button href="/learn-more" className="mt-[24px] font-medium!">
       Learn More
       <ArrowRightIcon className="h-4 w-4" />
     </Button>
@@ -67,7 +71,7 @@ const MeetFounder = () => {
             <FounderPhoto />
           </div>
           <div
-            className="border-goldenrod absolute rounded-[20px] border-2 pt-8 pr-14 pb-10 pl-[138px]"
+            className="border-goldenrod absolute rounded-[20px] border-2 pt-[40px] pr-[70px] pb-[48px] pl-[138px]"
             style={{ width: 722, height: 410, top: 90, left: 565 }}
           >
             <FounderContent />

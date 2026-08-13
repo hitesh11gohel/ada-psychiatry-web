@@ -13,7 +13,7 @@ const QuoteBanner = () => {
             >
               &ldquo;
             </span>
-            <p className="-mt-6 mb-2 font-serif text-lg font-bold text-white sm:text-3xl">
+            <p className="font-abhaya -mt-6 mb-2 [font-feature-settings:'liga'_off,'clig'_off] text-[32px] leading-[29px] font-bold text-white">
               “We help people living with and experiencing difficult times”
             </p>
           </div>

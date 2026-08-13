@@ -15,10 +15,10 @@ const StepCard = ({ number, title, icon, className = "" }: StepCardProps) => {
       <div className="flex h-12 w-12 items-center justify-center text-white">
         {icon}
       </div>
-      <span className="text-gradient-gold font-serif text-2xl font-bold">
+      <span className="text-gradient-gold font-abhaya text-[28px] leading-[40px] font-bold">
         {number}
       </span>
-      <p className="font-sans text-sm text-white">{title}</p>
+      <p className="font-sans text-sm leading-[20px] text-white">{title}</p>
     </div>
   );
 };

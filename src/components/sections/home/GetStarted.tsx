@@ -33,11 +33,11 @@ const STEPS = [
 const GetStarted = () => {
   return (
     <section className="relative bg-black py-20 sm:py-24">
-      <div className="bg-gradient-gold absolute inset-x-0 top-0 h-[3px]" />
-      <div className="bg-gradient-gold absolute inset-x-0 bottom-0 h-[3px]" />
+      <div className="bg-gradient-gold absolute inset-x-0 top-0 h-[6px]" />
+      <div className="bg-gradient-gold absolute inset-x-0 bottom-0 h-[6px]" />
 
       <Container>
-        <h2 className="text-gradient-gold text-center font-serif text-3xl font-semibold sm:text-4xl">
+        <h2 className="text-gradient-gold font-abhaya text-center text-3xl font-bold sm:text-4xl lg:text-[40px] lg:leading-[60px]">
           Four Simple Steps To
           <span className="block">Get Started</span>
         </h2>
@@ -64,7 +64,10 @@ const GetStarted = () => {
         </div>
 
         <div className="mt-16 flex justify-center">
-          <Button href="/schedule-a-call">
+          <Button
+            href="/schedule-a-call"
+            className="lg:h-[60px]! lg:w-[299px]!"
+          >
             Schedule a Call
             <ArrowRightIcon className="h-4 w-4" />
           </Button>
