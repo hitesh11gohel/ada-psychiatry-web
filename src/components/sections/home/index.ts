@@ -1,0 +1,10 @@
+export { default as Hero } from "./Hero";
+export { default as MeetFounder } from "./MeetFounder";
+export { default as TreatmentFocus } from "./TreatmentFocus";
+export { default as QuoteBanner } from "./QuoteBanner";
+export { default as OurServices } from "./OurServices";
+export { default as WhyChooseUs } from "./WhyChooseUs";
+export { default as Testimonials } from "./Testimonials";
+export { default as GetStarted } from "./GetStarted";
+export { default as AcceptingStates } from "./AcceptingStates";
+export { default as Faq } from "./Faq";
