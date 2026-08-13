@@ -47,13 +47,15 @@ const TreatmentFeatureRow = ({
         <p className="font-abhaya mt-4 text-[18.75px] leading-[33.75px] font-normal text-black">
           {description}
         </p>
-        <Button
-          href={`/${title.toLowerCase().replace(/\s+/g, "-")}`}
-          className="mt-6 font-normal!"
-        >
-          Learn More
-          <ArrowRightIcon className="h-4 w-4" />
-        </Button>
+        <div className="mt-6 flex justify-center sm:justify-start">
+          <Button
+            href={`/${title.toLowerCase().replace(/\s+/g, "-")}`}
+            className="font-normal!"
+          >
+            Learn More
+            <ArrowRightIcon className="h-4 w-4" />
+          </Button>
+        </div>
       </div>
     </div>
   );
