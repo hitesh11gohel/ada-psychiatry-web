@@ -21,12 +21,12 @@ const TreatmentFeatureRow = ({
 }: TreatmentFeatureRowProps) => {
   return (
     <div
-      className={`flex flex-col items-center justify-center gap-8 sm:gap-20 lg:mx-auto lg:w-[1125px] lg:gap-[18.75px] ${reverse ? "sm:flex-row-reverse" : "sm:flex-row"} ${className}`}
+      className={`flex flex-col items-center justify-center gap-8 min-[1440px]:mx-auto min-[1440px]:w-[1125px] min-[1440px]:gap-[18.75px] sm:gap-20 ${reverse ? "sm:flex-row-reverse" : "sm:flex-row"} ${className}`}
     >
-      <div className="w-full max-w-[260px] shrink-0 lg:w-[553.125px] lg:max-w-none lg:px-[56.625px] lg:py-[46.88px]">
-        <div className="relative aspect-square w-full lg:h-[421.875px] lg:w-[421.875px]">
+      <div className="w-full max-w-[260px] shrink-0 min-[1440px]:w-[553.125px] min-[1440px]:max-w-none min-[1440px]:px-[56.625px] min-[1440px]:py-[46.88px]">
+        <div className="relative aspect-square w-full min-[1440px]:h-[421.875px] min-[1440px]:w-[421.875px]">
           <div
-            className="border-goldenrod absolute -right-3 -bottom-3 h-full w-full rounded-full border-2 lg:-right-[18.75px] lg:-bottom-[18.75px]"
+            className="border-goldenrod absolute -right-3 -bottom-3 h-full w-full rounded-full border-2 min-[1440px]:-right-[18.75px] min-[1440px]:-bottom-[18.75px]"
             aria-hidden="true"
           />
           <div className="relative h-full w-full overflow-hidden rounded-full">
@@ -34,13 +34,13 @@ const TreatmentFeatureRow = ({
               src={imageSrc}
               alt={imageAlt}
               fill
-              sizes="(min-width: 1024px) 422px, 260px"
+              sizes="(min-width: 1440px) 422px, 260px"
               className="object-cover"
             />
           </div>
         </div>
       </div>
-      <div className="sm:w-[350px] sm:shrink-0 lg:w-[553.125px]">
+      <div className="min-[1440px]:w-[553.125px] sm:w-[350px] sm:shrink-0">
         <h3 className="font-abhaya text-[33.75px] leading-[32.813px] font-bold text-black">
           {title}
         </h3>

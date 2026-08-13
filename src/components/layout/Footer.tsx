@@ -106,11 +106,11 @@ const FooterLinkGroup = ({
 
 const Footer = () => {
   return (
-    <footer className="relative w-full bg-black text-white lg:h-[421px]">
+    <footer className="relative w-full bg-black text-white min-[1440px]:h-[421px]">
       {/* =========================
           DESKTOP
       ========================== */}
-      <div className="hidden lg:block">
+      <div className="hidden min-[1440px]:block">
         {/* Quick Links */}
         <div className="absolute top-[52px] left-[100px]">
           <FooterLinkGroup heading="Quick Links" links={QUICK_LINKS} />
@@ -231,7 +231,7 @@ const Footer = () => {
           MOBILE / TABLET
       ========================== */}
 
-      <div className="px-6 py-10 lg:hidden">
+      <div className="px-6 py-10 min-[1440px]:hidden">
         <div className="grid gap-10 sm:grid-cols-2">
           <FooterLinkGroup heading="Quick Links" links={QUICK_LINKS} />
 

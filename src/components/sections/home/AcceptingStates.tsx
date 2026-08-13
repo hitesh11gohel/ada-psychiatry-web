@@ -42,11 +42,11 @@ const AcceptingStates = () => {
         <span className="block">The Following States</span>
       </SectionHeading>
 
-      <div className="mt-[60px] grid grid-cols-1 gap-12 sm:grid-cols-3 sm:gap-10 lg:gap-x-[30px] lg:gap-y-0">
+      <div className="mt-[60px] grid grid-cols-1 gap-12 min-[1440px]:gap-x-[30px] min-[1440px]:gap-y-0 sm:grid-cols-3 sm:gap-10">
         {STATES.map((state) => (
           <div
             key={state.name}
-            className="mx-auto flex w-full max-w-sm flex-col items-center text-center lg:h-[420px] lg:w-[400px] lg:max-w-none"
+            className="mx-auto flex w-full max-w-sm flex-col items-center text-center min-[1440px]:h-[420px] min-[1440px]:w-[400px] min-[1440px]:max-w-none"
           >
             <div className="relative aspect-[2/1] w-full overflow-hidden rounded-t-full">
               <Image

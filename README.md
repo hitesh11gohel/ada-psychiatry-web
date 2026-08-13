@@ -1,5 +1,7 @@
 Marketing site for Ada Psychiatry, built with [Next.js](https://nextjs.org) (App Router).
 
+**Live preview** (no need to run the code locally): https://ada-psychiatry-web.vercel.app
+
 See [ARCHITECTURE.md](./ARCHITECTURE.md) for the reasoning behind the folder structure and current architectural decisions.
 
 ## Getting started

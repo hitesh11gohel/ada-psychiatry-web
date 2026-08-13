@@ -65,7 +65,7 @@ const Hero = () => {
       </div>
       <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/35 to-transparent" />
 
-      <div className="relative px-6 py-14 sm:px-12 sm:py-16 lg:px-20 lg:py-20">
+      <div className="relative px-6 py-38 sm:px-12 sm:py-16 lg:px-20 lg:py-20">
         <div className="max-w-xl">
           <h1 className="font-abhaya text-3xl leading-[1.15] font-normal tracking-normal text-white uppercase sm:text-4xl sm:leading-tight lg:text-[48px] lg:leading-[56.5px]">
             Need A Mental
