@@ -1,0 +1,17 @@
+export { default as ArrowRightIcon } from "./ArrowRightIcon";
+export { ActiveHexagonIcon, InactiveHexagonIcon } from "./HexagonIcon";
+export { default as InstagramIcon } from "./InstagramIcon";
+export { default as FacebookIcon } from "./FacebookIcon";
+export { default as XIcon } from "./XIcon";
+export { default as TikTokIcon } from "./TikTokIcon";
+export { default as LinkedInIcon } from "./LinkedInIcon";
+export { default as CalendarIcon } from "./CalendarIcon";
+export { default as HandsIcon } from "./HandsIcon";
+export { default as DiscussionIcon } from "./DiscussionIcon";
+export { default as NotesIcon } from "./NotesIcon";
+export { default as HumanBrainIcon } from "./HumanBrainIcon";
+export { default as HospitalIcon } from "./HospitalIcon";
+export { default as MentalHealthIcon } from "./MentalHealthIcon";
+export { default as BrainIcon } from "./BrainIcon";
+export { default as PlusIcon } from "./PlusIcon";
+export { default as MinusIcon } from "./MinusIcon";
