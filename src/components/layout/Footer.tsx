@@ -231,7 +231,7 @@ const Footer = () => {
           MOBILE / TABLET
       ========================== */}
 
-      <div className="px-6 py-10 min-[1440px]:hidden">
+      <div className="px-6 pt-10 pb-6 min-[1440px]:hidden">
         <div className="grid gap-10 sm:grid-cols-2">
           <FooterLinkGroup heading="Quick Links" links={QUICK_LINKS} />
 
