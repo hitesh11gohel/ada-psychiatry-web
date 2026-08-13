@@ -1,38 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Marketing site for Ada Psychiatry, built with [Next.js](https://nextjs.org) (App Router).
 
 See [ARCHITECTURE.md](./ARCHITECTURE.md) for the reasoning behind the folder structure and current architectural decisions.
 
-## Getting Started
+## Getting started
 
-First, run the development server:
+1. **Prerequisites**: Node.js 20.9+ and npm (the repo is committed with `package-lock.json`, so use npm rather than yarn/pnpm to keep the lockfile consistent).
+2. **Clone and install**:
+   ```bash
+   git clone https://github.com/hitesh11gohel/ada-psychiatry-web.git
+   cd ada-psychiatry-web
+   npm install
+   ```
+3. **Run the dev server**:
+   ```bash
+   npm run dev
+   ```
+   Open [http://localhost:3000](http://localhost:3000) to see the site. Pages hot-reload as you edit files under `src/`.
+4. **No environment variables are required** — this is a fully static marketing site with no backend/API to configure.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Other scripts
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+| Command                | What it does                                   |
+| ---------------------- | ---------------------------------------------- |
+| `npm run build`        | Production build                               |
+| `npm run start`        | Serve the production build (run `build` first) |
+| `npm run lint`         | Run ESLint                                     |
+| `npm run format`       | Format the repo with Prettier                  |
+| `npm run format:check` | Check formatting without writing changes       |
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Linting and formatting also run automatically on staged files via Husky + lint-staged on commit.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Features
 
-## Learn More
+- **Home page** composed of: Hero carousel, Meet the Founder, Treatment Focus, Quote Banner, Our Services, Why Choose Us, Testimonials, Get Started (4-step process), Accepting States, and FAQ.
+- **Global navbar and footer**, wired so every link (including "Book an Appointment" and the footer's Quick Links/Resources/Legal columns) navigates somewhere real — see [ARCHITECTURE.md](./ARCHITECTURE.md#why-appslugpagetsx-exists-with-no-real-content) for how not-yet-designed destinations are handled.
+- **Responsive layout** tuned across mobile, tablet, and desktop breakpoints (e.g. the navbar, the "Get Started" 4-step row, and the footer's link columns each have their own tablet-specific layout).
+- **Social links** in the footer point to each platform's real login page.
+- **Custom favicon/app icon** using the Ada Psychiatry logo mark.
+- Fonts: [Work Sans](https://fonts.google.com/specimen/Work+Sans) (body) and [Playfair Display](https://fonts.google.com/specimen/Playfair+Display) (headings, standing in for a licensed display face — see the `TODO` in `src/app/layout.tsx`), both loaded via `next/font/google`.
 
-To learn more about Next.js, take a look at the following resources:
+## Where things live
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+A reviewer looking for a specific piece of UI:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+| Looking for...                                     | Look in...                      |
+| -------------------------------------------------- | ------------------------------- |
+| A specific home page section (Hero, FAQ, ...)      | `src/components/sections/home/` |
+| Navbar / Footer                                    | `src/components/layout/`        |
+| Reusable primitives (Button, Card, Accordion, ...) | `src/components/ui/`            |
+| Icons                                              | `src/components/icons/`         |
+| Route definitions (URLs → pages)                   | `src/app/`                      |
+| Global styles / Tailwind theme tokens              | `src/app/globals.css`           |
 
-## Deploy on Vercel
+For the _why_ behind this layout (not just the _what_), see [ARCHITECTURE.md](./ARCHITECTURE.md).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Learn more
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- [Next.js Documentation](https://nextjs.org/docs) — Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) — an interactive Next.js tutorial.
+
+## Deploy
+
+The easiest way to deploy is [Vercel](https://vercel.com/new), from the creators of Next.js — see the [deployment docs](https://nextjs.org/docs/app/building-your-application/deploying).

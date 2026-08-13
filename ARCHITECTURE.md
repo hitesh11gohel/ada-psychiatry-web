@@ -16,14 +16,25 @@ to see and won't find here, and why.
 
 ```
 src/
-  app/            routing only — layout.tsx, page.tsx, globals.css
+  app/            routing only
+    page.tsx        home page
+    [slug]/         catch-all placeholder route (see below)
+    layout.tsx, globals.css
   components/
     ui/           generic reusable primitives (Button, Card, Container, Accordion...)
     layout/       global chrome shared across pages (Navbar, Footer)
-    sections/     composed page blocks (Hero, Faq, Testimonials...)
+    sections/
+      home/         composed blocks for the home page (Hero, Faq, Testimonials...)
+      index.ts       re-exports every page area's sections for `@/components/sections`
     icons/        inline SVG icon components
   hooks/          cross-component logic (useAutoplay)
 ```
+
+`sections/` is grouped one subfolder per page area (`home/` today), each with its own
+barrel file, rather than one flat folder. This is so a future `contact-us/` or
+`services/` page area can own its section components without them being visually
+interleaved with home's in a file listing, while `@/components/sections` still gives
+every consumer a single flat import surface.
 
 ## Why `components/` sits next to `app/`, not inside it
 
@@ -35,6 +46,20 @@ templates use. Nesting shared UI inside `app/` (via a private `app/_components` 
 only makes sense when a component belongs to exactly one route; the components here
 (`Button`, `Container`, `Navbar`) are meant to be reused by every future page, so a
 top-level `components/` is the correct home, not a shortcut.
+
+## Why `app/[slug]/page.tsx` exists with no real content
+
+The navbar and footer link out to destinations (`/services`, `/who-we-treat`,
+`/faqs`, `/book-an-appointment`, ...) that don't have designed content yet. Rather
+than leave those as dead `href="#"` links or let them 404, every unbuilt destination
+falls through to a single dynamic route that title-cases the slug and renders it
+centered on the page — so the full nav/footer is clickable today, and every link
+resolves to a real (if placeholder) page.
+
+When a real page is designed for one of these paths, adding a static route at that
+path (e.g. `app/services/page.tsx`) is enough — Next.js always resolves a static
+segment ahead of a dynamic one at the same level, so the new page takes over that URL
+automatically and `[slug]` keeps handling whatever's left.
 
 ## Why there's no `pages/` directory
 
