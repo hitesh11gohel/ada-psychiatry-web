@@ -1,5 +1,9 @@
 export { default as ArrowRightIcon } from "./ArrowRightIcon";
-export { ActiveHexagonIcon, InactiveHexagonIcon } from "./HexagonIcon";
+export {
+  ActiveHexagonIcon,
+  InactiveHexagonIcon,
+  SolidHexagonIcon,
+} from "./HexagonIcon";
 export { default as InstagramIcon } from "./InstagramIcon";
 export { default as FacebookIcon } from "./FacebookIcon";
 export { default as XIcon } from "./XIcon";

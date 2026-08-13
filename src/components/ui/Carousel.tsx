@@ -4,7 +4,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import type { EmblaOptionsType } from "embla-carousel";
 import { useCallback, useEffect, useState } from "react";
 import type { ReactNode } from "react";
-import { ActiveHexagonIcon, InactiveHexagonIcon } from "@/components/icons";
+import { InactiveHexagonIcon, SolidHexagonIcon } from "@/components/icons";
 import useAutoplay from "@/hooks/useAutoplay";
 
 type CarouselProps = {
@@ -85,7 +85,7 @@ const Carousel = ({
         >
           {scrollSnaps.map((_, index) => {
             const HexagonIcon =
-              index === selectedIndex ? ActiveHexagonIcon : InactiveHexagonIcon;
+              index === selectedIndex ? SolidHexagonIcon : InactiveHexagonIcon;
             return (
               <button
                 key={index}

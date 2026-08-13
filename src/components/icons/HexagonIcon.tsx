@@ -34,6 +34,10 @@ export const InactiveHexagonIcon = (props: HexagonIconProps) => (
   <HexagonShape fill="transparent" {...props} />
 );
 
+export const SolidHexagonIcon = (props: HexagonIconProps) => (
+  <HexagonShape fill={STROKE_COLOR} {...props} />
+);
+
 export const ActiveHexagonIcon = (props: HexagonIconProps) => {
   const gradientId = `hexagon-active-${useId()}`;
   return (

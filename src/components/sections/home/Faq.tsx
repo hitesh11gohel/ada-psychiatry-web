@@ -34,7 +34,7 @@ const Faq = () => {
   return (
     <section className="bg-bg pb-20 sm:pb-24">
       <Container>
-        <SectionHeading className="text-[40px]!">
+        <SectionHeading className="font-abhaya! [font-feature-settings:'liga'_off,'clig'_off] font-bold! text-black! sm:text-[40px]! sm:leading-[56px]!">
           Frequently asked questions
         </SectionHeading>
         <div className="mt-12 max-w-5xl">
@@ -43,18 +43,13 @@ const Faq = () => {
               <AccordionItem
                 key={faq.question}
                 title={
-                  <span
-                    className="text-xl leading-none font-bold tracking-normal sm:text-2xl"
-                    style={{
-                      fontFamily: "'Wulkan Display', var(--font-serif), serif",
-                    }}
-                  >
+                  <span className="font-abhaya text-ink text-xl leading-normal font-bold tracking-normal sm:text-[24px]">
                     {faq.question}
                   </span>
                 }
                 defaultOpen={index === 0}
               >
-                <span className="font-sans text-sm leading-[134%] font-normal tracking-normal text-black sm:text-xl">
+                <span className="font-sans text-sm leading-[134.4%] font-normal tracking-normal text-black sm:text-[24px]">
                   {faq.answer}
                 </span>
               </AccordionItem>
@@ -62,7 +57,12 @@ const Faq = () => {
           </Accordion>
         </div>
         <div className="mt-12 flex justify-center">
-          <Button href="/faqs" variant="soft">
+          <Button
+            href="/faqs"
+            variant="soft"
+            size="lg"
+            className="w-full! sm:w-[335px]!"
+          >
             See all FAQ
             <ArrowRightIcon className="h-4 w-4" />
           </Button>
