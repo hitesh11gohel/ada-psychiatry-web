@@ -41,7 +41,7 @@ const AcceptingStates = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   return (
-    <section className="bg-bg px-4 pt-20 pb-20 sm:px-6 sm:pt-24 sm:pb-24 lg:px-[80px] lg:pt-[73.6px] lg:pb-[74px]">
+    <section className="bg-bg pt-20 sm:px-6 sm:pt-24 sm:pb-24 lg:px-[80px] lg:pt-[73.6px] lg:pb-[74px]">
       <SectionHeading>
         Now Accepting Patients In
         <span className="block">The Following States</span>
@@ -63,7 +63,7 @@ const AcceptingStates = () => {
               onClick={() =>
                 setActiveIndex((prev) => (prev === index ? null : index))
               }
-              className="mx-auto w-full max-w-sm min-[1440px]:w-[400px] min-[1440px]:max-w-none"
+              className="mx-auto w-[300px] min-[1440px]:w-[400px] min-[1440px]:max-w-none sm:w-full sm:max-w-sm"
             >
               {/* Square footprint reserved at every breakpoint so expanding
                   to a full circle never overlaps the row below or reflows
@@ -102,7 +102,7 @@ const AcceptingStates = () => {
                 </div>
 
                 <div
-                  className={`pointer-events-none absolute inset-x-0 top-1/2 z-20 px-[25px] pt-[7.5px] text-center transition-opacity duration-300 ease-in-out ${
+                  className={`pointer-events-none absolute inset-x-0 top-1/2 z-20 px-[25px] pt-[25px] pb-0 text-center transition-opacity duration-300 ease-in-out ${
                     isActive ? "opacity-0" : "opacity-100"
                   }`}
                 >

@@ -32,12 +32,12 @@ const FAQS = [
 
 const Faq = () => {
   return (
-    <section className="bg-bg pb-20 sm:pb-24">
+    <section className="bg-bg py-[20px] sm:pt-0 sm:pb-24">
       <Container>
         <SectionHeading className="font-abhaya! [font-feature-settings:'liga'_off,'clig'_off] font-bold! text-black! sm:text-[40px]! sm:leading-[56px]!">
           Frequently asked questions
         </SectionHeading>
-        <div className="mt-12 max-w-5xl">
+        <div className="mt-[20px] max-w-5xl sm:mt-12">
           <Accordion className="divide-[#C18C2C]/20 px-[20px] sm:px-0">
             {FAQS.map((faq, index) => (
               <AccordionItem
