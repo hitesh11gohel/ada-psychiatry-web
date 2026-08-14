@@ -19,3 +19,4 @@ export { default as MentalHealthIcon } from "./MentalHealthIcon";
 export { default as BrainIcon } from "./BrainIcon";
 export { default as PlusIcon } from "./PlusIcon";
 export { default as MinusIcon } from "./MinusIcon";
+export { default as HamburgerIcon } from "./HamburgerIcon";

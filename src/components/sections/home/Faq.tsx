@@ -38,7 +38,7 @@ const Faq = () => {
           Frequently asked questions
         </SectionHeading>
         <div className="mt-12 max-w-5xl">
-          <Accordion className="divide-[#C18C2C]/20">
+          <Accordion className="divide-[#C18C2C]/20 px-[20px] sm:px-0">
             {FAQS.map((faq, index) => (
               <AccordionItem
                 key={faq.question}

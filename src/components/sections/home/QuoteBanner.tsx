@@ -3,7 +3,7 @@ import { Container, WaveDivider } from "@/components/ui";
 const QuoteBanner = () => {
   return (
     <section className="bg-bg">
-      <WaveDivider direction="up" className="h-6 w-full text-black" />
+      <WaveDivider direction="up" className="-mb-px h-6 w-full text-black" />
       <div className="bg-black py-8">
         <Container>
           <div className="mx-auto max-w-4xl text-center">
@@ -19,7 +19,7 @@ const QuoteBanner = () => {
           </div>
         </Container>
       </div>
-      <WaveDivider direction="down" className="h-6 w-full text-black" />
+      <WaveDivider direction="down" className="-mt-px h-6 w-full text-black" />
     </section>
   );
 };

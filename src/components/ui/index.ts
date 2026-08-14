@@ -7,6 +7,8 @@ export { default as Carousel } from "./Carousel";
 export { default as Accordion } from "./Accordion";
 export { default as AccordionItem } from "./AccordionItem";
 export { default as NavItem } from "./NavItem";
+export { default as NavDropdown } from "./NavDropdown";
+export type { NavDropdownItem } from "./NavDropdown";
 export { default as StepCard } from "./StepCard";
 export { default as TestimonialCard } from "./TestimonialCard";
 export { default as ServiceBadge } from "./ServiceBadge";

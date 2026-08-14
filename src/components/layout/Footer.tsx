@@ -30,6 +30,27 @@ const LEGAL_LINKS: FooterLink[] = [
   { label: "Cookie Settings", href: "/cookie-settings" },
 ];
 
+const MOBILE_QUICK_LINKS: FooterLink[] = [
+  { label: "Who we are", href: "/who-we-are" },
+  { label: "Services", href: "/services" },
+  { label: "Contact Us", href: "/contact-us" },
+  { label: "Locations", href: "/locations" },
+  { label: "Sitemap", href: "/sitemap" },
+];
+
+const MOBILE_RESOURCE_LINKS: FooterLink[] = [
+  { label: "Faq", href: "/faqs" },
+  { label: "Blog", href: "/blog" },
+  { label: "Self Pay Fees", href: "/self-pay-fees" },
+  { label: "Insurance", href: "/insurance" },
+  { label: "Preceptorship", href: "/preceptorship" },
+];
+
+const MOBILE_LEGAL_LINKS: FooterLink[] = [
+  { label: "Terms Condition", href: "/terms-condition" },
+  { label: "Privacy Policy", href: "/privacy-policy" },
+];
+
 const SOCIAL_ICONS = [
   {
     label: "Instagram",
@@ -61,6 +82,7 @@ const SOCIAL_ICONS = [
 const HEADING_SIZE_CLASSES = {
   16: "text-[16px]",
   18: "text-[18px]",
+  20: "text-[20px]",
 } as const;
 
 const FooterHeading = ({
@@ -70,7 +92,7 @@ const FooterHeading = ({
 }: {
   children: string;
   className?: string;
-  size?: 16 | 18;
+  size?: 16 | 18 | 20;
 }) => (
   <p
     className={`font-abhaya text-goldenrod leading-[30px] font-bold tracking-[0.2px] ${HEADING_SIZE_CLASSES[size]} ${className}`}
@@ -82,14 +104,23 @@ const FooterHeading = ({
 const FooterLinkGroup = ({
   heading,
   links,
+  size = 18,
+  itemGap = 14,
+  listMarginTop = 20,
 }: {
   heading: string;
   links: FooterLink[];
+  size?: 16 | 18 | 20;
+  itemGap?: number;
+  listMarginTop?: number;
 }) => (
   <div>
-    <FooterHeading>{heading}</FooterHeading>
+    <FooterHeading size={size}>{heading}</FooterHeading>
 
-    <ul className="mt-[20px] flex flex-col gap-[14px]">
+    <ul
+      className="flex flex-col"
+      style={{ marginTop: `${listMarginTop}px`, gap: `${itemGap}px` }}
+    >
       {links.map((link) => (
         <li key={link.label}>
           <Link
@@ -232,30 +263,51 @@ const Footer = () => {
       ========================== */}
 
       <div className="px-6 pt-10 pb-6 min-[1440px]:hidden">
-        <div className="grid gap-10 sm:grid-cols-2">
-          <FooterLinkGroup heading="Quick Links" links={QUICK_LINKS} />
+        <div className="grid grid-cols-2 gap-x-6 gap-y-5 sm:grid-cols-3">
+          <FooterLinkGroup
+            heading="Quick Links"
+            links={MOBILE_QUICK_LINKS}
+            size={20}
+            itemGap={5}
+            listMarginTop={10}
+          />
 
-          <FooterLinkGroup heading="Resources" links={RESOURCE_LINKS} />
+          <FooterLinkGroup
+            heading="Resources"
+            links={MOBILE_RESOURCE_LINKS}
+            size={20}
+            itemGap={5}
+            listMarginTop={10}
+          />
 
-          <FooterLinkGroup heading="Legal" links={LEGAL_LINKS} />
+          <FooterLinkGroup
+            heading="Legal"
+            links={MOBILE_LEGAL_LINKS}
+            size={20}
+            itemGap={5}
+            listMarginTop={10}
+          />
 
           <div>
-            <FooterHeading>Business Hours</FooterHeading>
+            <FooterHeading size={20}>Business Hours</FooterHeading>
 
-            <div className="mt-5 flex flex-col gap-[14px]">
+            <div className="mt-[10px] flex flex-col gap-[5px]">
               <p className="font-sans text-sm text-white/90">
-                Monday - Thursday
+                Monday &ndash; Friday
               </p>
 
               <p className="font-sans text-sm text-white/90">
-                09:00 am - 4:00 pm
+                09:00 am &ndash; 5:00 pm
               </p>
             </div>
+          </div>
 
-            <FooterHeading className="mt-8">For Careers</FooterHeading>
+          {/* For Careers */}
+          <div className="col-span-2 sm:col-span-1">
+            <FooterHeading size={20}>For Careers</FooterHeading>
 
-            <div className="mt-5 flex flex-col gap-[14px]">
-              <p className="font-sans text-sm text-white/90">
+            <div className="mt-[10px] flex flex-col gap-[5px]">
+              <p className="font-sans text-sm whitespace-nowrap text-white/90">
                 Interested in joining the ADA Team?
               </p>
 
@@ -267,63 +319,53 @@ const Footer = () => {
               </a>
             </div>
           </div>
-        </div>
 
-        {/* Mobile Logo */}
-        <div className="mt-10">
-          <Link href="/" className="flex items-center gap-3">
-            <Image
-              src="/images/logo-icon.png"
-              alt="Ada Psychiatry logo"
-              width={46}
-              height={46}
-              className="h-[46px] w-[46px]"
-            />
+          {/* Locate Us */}
+          <div className="col-span-2 sm:col-span-1 sm:col-start-1">
+            <FooterHeading size={20}>Locate us</FooterHeading>
 
-            <span className="font-sans text-base font-bold tracking-[3px]">
-              ADA PSYCHIATRY
-            </span>
-          </Link>
+            <div className="mt-[10px] flex flex-col gap-[5px]">
+              <p className="font-sans text-sm text-white/90">
+                1820 E Ray Road, STE A110,
+              </p>
+              <p className="font-sans text-sm text-white/90">
+                Chandler, Arizona 85225
+              </p>
 
-          <FooterHeading size={16} className="mt-8">
-            Locate us
-          </FooterHeading>
+              <p className="font-sans text-sm text-white/90">
+                Phone:{" "}
+                <a href="tel:480-526-9292" className="hover:text-white">
+                  480-526-9292
+                </a>
+              </p>
+            </div>
+          </div>
 
-          <p className="mt-5 font-sans text-sm text-white/90">
-            1820 E Ray Road, STE A107, Chandler, Arizona 85225
-          </p>
+          {/* Follow Us */}
+          <div className="col-span-2 sm:col-span-1">
+            <FooterHeading size={20}>Follow us</FooterHeading>
 
-          <p className="mt-1 font-sans text-sm text-white/90">
-            Phone:{" "}
-            <a href="tel:480-526-9292" className="hover:text-white">
-              480-526-9292
-            </a>
-          </p>
-
-          <FooterHeading size={16} className="mt-8">
-            Follow us
-          </FooterHeading>
-
-          <div className="mt-4 flex items-center gap-4">
-            {SOCIAL_ICONS.map(({ label, Icon, href }) => (
-              <a
-                key={label}
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={label}
-                className="flex h-6 w-6 items-center justify-center text-white/90 hover:text-white"
-              >
-                <Icon className="h-6 w-6" />
-              </a>
-            ))}
+            <div className="mt-4 flex items-center gap-4">
+              {SOCIAL_ICONS.map(({ label, Icon, href }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  className="flex h-6 w-6 items-center justify-center text-white/90 hover:text-white"
+                >
+                  <Icon className="h-6 w-6" />
+                </a>
+              ))}
+            </div>
           </div>
         </div>
 
         {/* Mobile Divider + Copyright */}
-        <div className="mt-10 border-t border-white/20 pt-6 text-center">
+        <div className="mt-5 border-t border-white/20 pt-6 text-center">
           <p className="font-sans text-xs text-white/70">
-            &copy; Ada Psychiatry. All rights reserved.
+            &copy; Ada Psychiatry. All rights reserved. 2025
           </p>
         </div>
       </div>

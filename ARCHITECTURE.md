@@ -18,7 +18,7 @@ to see and won't find here, and why.
 src/
   app/            routing only
     page.tsx        home page
-    [slug]/         catch-all placeholder route (see below)
+    [...slug]/      catch-all placeholder route (see below)
     layout.tsx, globals.css
   components/
     ui/           generic reusable primitives (Button, Card, Container, Accordion...)
@@ -47,19 +47,21 @@ only makes sense when a component belongs to exactly one route; the components h
 (`Button`, `Container`, `Navbar`) are meant to be reused by every future page, so a
 top-level `components/` is the correct home, not a shortcut.
 
-## Why `app/[slug]/page.tsx` exists with no real content
+## Why `app/[...slug]/page.tsx` exists with no real content
 
 The navbar and footer link out to destinations (`/services`, `/who-we-treat`,
-`/faqs`, `/book-an-appointment`, ...) that don't have designed content yet. Rather
-than leave those as dead `href="#"` links or let them 404, every unbuilt destination
-falls through to a single dynamic route that title-cases the slug and renders it
-centered on the page — so the full nav/footer is clickable today, and every link
-resolves to a real (if placeholder) page.
+`/faqs`, `/book-an-appointment`, ...) — including nested ones like
+`/who-we-are/about-ada` or `/resources/pmhnp-preceptorship` from the nav dropdowns —
+that don't have designed content yet. Rather than leave those as dead `href="#"` links
+or let them 404, every unbuilt destination, at any depth, falls through to a single
+catch-all route that title-cases the last path segment and renders it centered on the
+page — so the full nav/footer is clickable today, and every link resolves to a real
+(if placeholder) page.
 
 When a real page is designed for one of these paths, adding a static route at that
 path (e.g. `app/services/page.tsx`) is enough — Next.js always resolves a static
 segment ahead of a dynamic one at the same level, so the new page takes over that URL
-automatically and `[slug]` keeps handling whatever's left.
+automatically and `[...slug]` keeps handling whatever's left.
 
 ## Why there's no `pages/` directory
 

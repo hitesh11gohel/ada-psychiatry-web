@@ -42,11 +42,11 @@ const GetStarted = () => {
           <span className="block">Get Started</span>
         </h2>
 
-        <div className="mt-16 grid grid-cols-2 gap-x-6 gap-y-10 md:flex md:flex-row md:items-start md:justify-between md:gap-4">
+        <div className="mt-16 flex flex-col items-center min-[1025px]:flex-row min-[1025px]:items-start min-[1025px]:justify-between min-[1025px]:gap-4">
           {STEPS.map((step, index) => (
             <div
               key={step.number}
-              className="flex w-full items-start md:flex-1"
+              className="flex w-full flex-col items-center min-[1025px]:flex-1 min-[1025px]:flex-row min-[1025px]:items-start"
             >
               <StepCard
                 number={step.number}
@@ -54,10 +54,16 @@ const GetStarted = () => {
                 icon={<step.Icon className="h-full w-full" />}
               />
               {index < STEPS.length - 1 && (
-                <div
-                  aria-hidden="true"
-                  className="mt-6 hidden h-px flex-1 border-t border-dashed border-white/80 md:block"
-                />
+                <>
+                  <div
+                    aria-hidden="true"
+                    className="my-4 h-16 w-px border-l border-dashed border-white/80 min-[1025px]:hidden"
+                  />
+                  <div
+                    aria-hidden="true"
+                    className="mt-6 hidden h-px flex-1 border-t border-dashed border-white/80 min-[1025px]:block"
+                  />
+                </>
               )}
             </div>
           ))}

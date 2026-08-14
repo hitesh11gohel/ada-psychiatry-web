@@ -31,7 +31,7 @@ const AccordionItem = ({
           aria-expanded={open}
           aria-controls={panelId}
           onClick={() => setOpen((prev) => !prev)}
-          className="text-ink flex w-full items-center gap-4 py-4 text-left font-sans text-base font-medium"
+          className="text-ink flex w-full cursor-pointer items-center gap-4 py-4 text-left font-sans text-base font-medium"
         >
           {open ? (
             <MinusIcon className="h-[18px] w-[18px] shrink-0" />

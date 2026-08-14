@@ -26,7 +26,7 @@ const OurServices = () => {
     <section className="bg-bg py-20 sm:pb-24">
       <Container>
         <SectionHeading>Our Services</SectionHeading>
-        <div className="mt-14 grid grid-cols-2 gap-x-6 gap-y-12 sm:grid-cols-3 lg:grid-cols-6">
+        <div className="mt-14 grid grid-cols-3 gap-x-6 gap-y-12 lg:grid-cols-6">
           {SERVICES.map(({ label, Icon }, index) => (
             <ServiceBadge
               key={`${label}-${index}`}

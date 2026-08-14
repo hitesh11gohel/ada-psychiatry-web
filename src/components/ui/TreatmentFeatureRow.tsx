@@ -41,7 +41,7 @@ const TreatmentFeatureRow = ({
         </div>
       </div>
       <div className="min-[1440px]:w-[553.125px] sm:w-[350px] sm:shrink-0">
-        <h3 className="font-abhaya text-[33.75px] leading-[32.813px] font-bold text-black">
+        <h3 className="font-abhaya text-center text-[33.75px] leading-[32.813px] font-bold text-black sm:text-left">
           {title}
         </h3>
         <p className="font-abhaya mt-4 text-[18.75px] leading-[33.75px] font-normal text-black">

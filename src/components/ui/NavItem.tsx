@@ -1,11 +1,13 @@
 "use client";
 
 import Link from "next/link";
+import NavDropdown, { type NavDropdownItem } from "./NavDropdown";
 
 type NavItemProps = {
   label: string;
   href?: string;
   hasDropdown?: boolean;
+  dropdownItems?: NavDropdownItem[];
   onClick?: () => void;
   className?: string;
 };
@@ -14,6 +16,7 @@ const NavItem = ({
   label,
   href,
   hasDropdown = false,
+  dropdownItems,
   onClick,
   className = "",
 }: NavItemProps) => {
@@ -42,26 +45,38 @@ const NavItem = ({
     </>
   );
 
-  if (href) {
-    return (
-      <Link href={href} className={classes}>
-        {content}
-      </Link>
-    );
-  }
-
-  const handleClick = () => {
-    if (onClick) {
-      onClick();
-      return;
-    }
-    window.alert(`${label} clicked`);
-  };
-
-  return (
-    <button type="button" onClick={handleClick} className={classes}>
+  const trigger = href ? (
+    <Link href={href} className={classes}>
+      {content}
+    </Link>
+  ) : (
+    <button
+      type="button"
+      onClick={() => {
+        if (onClick) {
+          onClick();
+          return;
+        }
+        window.alert(`${label} clicked`);
+      }}
+      className={classes}
+    >
       {content}
     </button>
+  );
+
+  if (!hasDropdown || !dropdownItems?.length) {
+    return trigger;
+  }
+
+  return (
+    <div className="group relative">
+      {trigger}
+      <NavDropdown
+        items={dropdownItems}
+        className="pointer-events-none opacity-0 transition-opacity duration-200 group-focus-within:pointer-events-auto group-focus-within:opacity-100 group-hover:pointer-events-auto group-hover:opacity-100"
+      />
+    </div>
   );
 };
 

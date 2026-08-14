@@ -34,43 +34,46 @@ const WHY_CHOOSE_US_ITEMS = [
 const WhyChooseUs = () => {
   return (
     <section className="bg-cream py-20 sm:py-24">
-      <Container className="grid gap-12 lg:grid-cols-2 lg:items-start lg:gap-16">
-        <div className="relative order-2 mx-auto w-full max-w-[560px] lg:order-1">
+      <Container className="grid gap-12 lg:grid-cols-2 lg:items-start lg:gap-x-16 lg:gap-y-0">
+        <SectionHeading
+          as="h2"
+          align="left"
+          className="text-center lg:col-start-2 lg:row-start-1 lg:text-left"
+        >
+          Why Should You Choose Ada Psychiatry?
+        </SectionHeading>
+
+        <div className="relative mx-auto w-[315px] sm:w-full sm:max-w-[560px] lg:col-start-1 lg:row-span-2 lg:row-start-1">
           <div
-            className="border-goldenrod absolute -right-6 -bottom-6 hidden h-full w-full border-2 lg:block"
+            className="border-goldenrod absolute -right-4 -bottom-4 h-full w-full border-2 sm:-right-6 sm:-bottom-6"
             aria-hidden="true"
           />
-          <div className="relative overflow-hidden">
+          <div className="relative h-[240px] w-[315px] overflow-hidden sm:aspect-[627/441] sm:h-auto sm:w-full">
             <Image
               src="/images/why-choose-us.png"
               alt="Ada Psychiatry care team"
-              width={627}
-              height={441}
-              className="h-auto w-full object-cover"
+              fill
+              sizes="(min-width: 640px) 560px, 315px"
+              className="object-cover"
             />
           </div>
         </div>
 
-        <div className="order-1 lg:order-2">
-          <SectionHeading as="h2" align="left">
-            Why Should You Choose Ada Psychiatry?
-          </SectionHeading>
-          <Accordion className="divide-goldenrod mt-8">
-            {WHY_CHOOSE_US_ITEMS.map((item, index) => (
-              <AccordionItem
-                key={item.title}
-                title={
-                  <span className="font-serif text-xl font-semibold sm:text-2xl">
-                    {item.title}
-                  </span>
-                }
-                defaultOpen={index === 0}
-              >
-                {item.description}
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </div>
+        <Accordion className="divide-goldenrod px-[20px] sm:px-0 lg:col-start-2 lg:row-start-2 lg:mt-[24px]">
+          {WHY_CHOOSE_US_ITEMS.map((item, index) => (
+            <AccordionItem
+              key={item.title}
+              title={
+                <span className="font-serif text-xl font-semibold sm:text-2xl">
+                  {item.title}
+                </span>
+              }
+              defaultOpen={index === 0}
+            >
+              {item.description}
+            </AccordionItem>
+          ))}
+        </Accordion>
       </Container>
     </section>
   );
